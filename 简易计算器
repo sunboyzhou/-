@@ -1,0 +1,79 @@
+ 
+#include<stdio.h>
+void main()
+{
+	char a[100];
+	int i,s=0;
+	gets(a);
+  
+    s=a[0]-48;
+	for(i=1;a[i]!='\0';i++)
+	{
+		if(a[i]=='+') s=s+(a[i+1]-48);
+		if(a[i]=='-') s=s-(a[i+1]-48);
+	}
+	printf("%d",s);
+}
+
+#include<stdio.h>
+void main()
+{
+	char a[100];
+	int i,s=0;
+	gets(a);
+    s=a[0]-48;
+	for(i=1;a[i]!='\0';i++)
+	{
+		if(a[i]=='+') s=s+(a[i+1]-48);
+		if(a[i]=='-') s=s-(a[i+1]-48);
+	}
+	printf("%d",s);
+}
+
+#include<stdio.h>
+void main()
+{
+	char a[100];
+	int i,s=0;
+	gets(a);
+    s=a[0]-48;
+	for(i=1;a[i]!='\0';i++)
+	{
+		if(a[i]=='+') s=s+(a[i+1]-48);
+		if(a[i]=='-') s=s-(a[i+1]-48);
+		if(a[i]=='/') s=s/(a[i+1]-48);
+		if(a[i]=='*') s=s*(a[i+1]-48);
+	}
+	printf("%d",s);
+}
+
+#include<stdio.h>
+void main()
+{
+	char a[100];
+	int i;
+	float s=0;
+	gets(a);
+                s=a[0]-48;
+	for(i=1;a[i]!='\0';i++)
+	{
+	
+		if(a[i]=='/') 
+		{
+			a[i-1]=((a[i-1]-48)/(a[i+1]-48))+48;
+			a[i]=a[i+1];
+		}
+		if(a[i]=='*')
+		{
+			a[i-1]=((a[i-1]-48)*(a[i+1]-48))+48;
+			a[i]=a[i+1];
+		}
+	}
+	for(i=0;a[i]!='\0';i++)
+	{
+		if(a[i]=='+') s=s+(a[i+1]-48);
+		if(a[i]=='-') s=s-(a[i+1]-48);
+	}
+	printf("%f",s);
+}
+

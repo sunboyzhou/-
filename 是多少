@@ -1,0 +1,65 @@
+#include <stdio.h>structList
+
+int data,
+{
+
+char xm[8];
+
+float cj;
+}
+
+structList * next;
+
+int main()
+{
+
+struct List
+} head ,node1 ,node2,nodeS,node;
+
+struct List * phead,* pnode1 ,* pnode2,*pnode3,*pnode;
+
+int x,n=3;
+
+phead=&head;
+
+pnode1=&node1;
+
+pnode2=&node2;
+
+pnode3=&node3;
+
+printf("请输入三个学生的信息: (学号姓名成绩) \");
+
+scanf("%d%%f",&pnode1->data,&pnode1->xm,&pnode1->cj);scanf("%d%s%f",&pnode2->data,&pnode2->xm,&pnode2->cj);scanf("%d%s%f",&pnode3->data,&pnode3->xm,&pnode3->cj);pnode1->next=pnode2;
+
+pnode2->next=pnode3;
+
+pnode3->next=NULL;
+
+phead=pnode1;
+
+pnode=phead;
+
+print("学生信息为: \n");
+
+while(pnode !=NULL)
+{
+
+printf("%d't%s't%f[n' ',pnode->data,pnode->xm,pnode-cj);pnode =pnode->next;
+
+pnode=phead;
+
+printf("In请输入你要删除的学号: \n");
+
+scanf("%d" ,&x);
+
+print("删除后的学号为: \n");
+
+while(pnode!=NULL)
+
+if(x!=pnode->data)
+
+printf("%d(t%slt%fn",pnode->data,pnode->xm,pnode->cj);pnode =pnode->next;
+
+return 0;
+}

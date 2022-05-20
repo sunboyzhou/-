@@ -1,0 +1,61 @@
+#include"stdio.h"
+#include"string.h"
+#include"stdlib.h"
+
+struct country
+{
+	char name[100];
+	int jp;
+	int yp;
+	int tp;
+	int zj;
+};
+
+void sc(struct country s[])
+{
+   for(int i=0;i<8;i++)
+      printf("%s%d%d%d%d\n",s[i].name,s[i].jp,s[i].yp,s[i].tp,&s[i].zj);
+}
+void px(struct country s[8],int n)
+{   int i,j;
+    struct country t;
+	for(i=0;i<n-1;i++)
+	{
+		for(j=0;j<n-1;j++)
+		{
+			if(s[j].zj>s[j+1].zj)
+			{  t=s[j];
+			   s[j]=s[j+1];
+			   s[j+1]=t;
+			}
+		}
+	}
+}
+
+void jg(struct country s[])
+{
+	FILE *national_sort=fopen("C:\\national_sort.txt","w");
+    for(int i=0;i<8;i++)
+      fprintf(national_sort,"%s%d%d%d%d\n",s[i].name,s[i].jp,s[i].yp,s[i].tp,&s[i].zj);
+}
+
+void fz(struct country s[],int n)
+{
+    FILE *fp=fopen("C:\\natial.txt","w");
+	for(int i=0;i<n;i++)
+	  fscanf(fp,"%s%d%d%d%d\n",&s[i].name,&s[i].jp,&s[i].yp,&s[i].tp,&s[i].zj);
+	fclose(fp);
+}
+
+int main()
+{  
+	struct country s[8];
+	FILE *fp=fopen("C:\\natial.txt","w");
+    if(fp==NULL)
+      printf("error!\n");
+    fz(s,8);
+    px(s,8);
+	jg(s);
+	sc(s);
+	return 0;
+}
